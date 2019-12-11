@@ -29,60 +29,20 @@ void initPort(void)
     GPIOE ->CR1 = BP2MASK;
 }
 
-
-
-void timing(void)
-{
-    u8 currentTime = 0;
-    char flag = 0;
-    initPort();
-    initTimer();
-    afficher_TIL321(currentTime);
-    
-   
-    
-    while(1)
-    {
-           
-        if((TIM3 -> SR1 & TIM3_SR1_UIF) )
-        {
-            currentTime++;
-			currentTime %=10;  
-            afficher_TIL321(currentTime);
-            TIM3 -> SR1 =TIM3 -> SR1& ~(TIM3_SR1_UIF);
-        }
-        if(lireBP2() && !flag)
-        {
-                TIM3 ->CR1 ^= TIMER3CR1;
-                currentTime = 0;
-            flag = 1;
-        }else if(!lireBP2() && flag )
-        {
-            flag = 0;
-        }
-
-    }
-}
-
-
 void intertiming(void)
 {
-    u8 currentTime = 0;
-    //counter = &currentTime;
     char flag =0;
     initPort();
     initTimer();
-    afficher_TIL321(currentTime);
+    afficher_TIL321(counter);
     enableInterrupts();
-    
-   
-    
+
     while(1)
     {
         if(lireBP2() && !flag)
         {
-                TIM3 ->CR1 ^= TIMER3CR1;
-                currentTime = 0;
+            TIM3 ->CR1 ^= TIMER3CR1;
+            counter = 0;
             flag = 1;
         }else if(!lireBP2() && flag )
         {
