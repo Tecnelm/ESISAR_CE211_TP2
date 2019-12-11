@@ -45,7 +45,7 @@ ptn_Child35=Bar-34
 
 [WorkState_v1_2.DockState.Bar-0]
 BarID=59419
-Bars=93
+Bars=96
 Bar#0=0
 Bar#1=59647
 Bar#2=0
@@ -139,6 +139,9 @@ Bar#89=0
 Bar#90=0
 Bar#91=0
 Bar#92=0
+Bar#93=0
+Bar#94=0
+Bar#95=0
 Style=0
 ExStyle=0
 PrevFloating=False
@@ -804,7 +807,7 @@ BarID=5720
 XPos=1
 YPos=-2
 Docking=True
-MRUDockID=0
+MRUDockID=59420
 MRUDockLeftPos=1
 MRUDockTopPos=-2
 MRUDockRightPos=151
