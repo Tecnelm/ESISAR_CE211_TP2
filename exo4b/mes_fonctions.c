@@ -104,10 +104,7 @@ void rightTimePush(void){
         {
             GPIOB->ODR = LETTRE_A;
         }
-        
-        
+                
     }
-    
-
 
 }
