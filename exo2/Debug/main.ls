@@ -5,10 +5,10 @@
   44                     ; 9 {
   46                     	switch	.text
   47  0000               _main:
-  51                     ; 10 	intertiming();
-  53  0000 cd0000        	call	_intertiming
+  51                     ; 10 	chenillardLed();
+  53  0000 cd0000        	call	_chenillardLed
   55                     ; 11 }
   58  0003 81            	ret
   71                     	xdef	_main
-  72                     	xref	_intertiming
+  72                     	xref	_chenillardLed
   91                     	end

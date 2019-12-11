@@ -7,5 +7,5 @@
 
 main()
 {
-	intertiming();
+	chenillardLed();
 }

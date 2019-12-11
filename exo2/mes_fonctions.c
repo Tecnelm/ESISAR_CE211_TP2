@@ -6,10 +6,12 @@
 #define TIMER3CR1 0x01
 
 #define BP2MASK 0X80 /// bP2 port E ligne 0x80
+#define BP3MASK 0x04 /// bP3 port C ligne 0x03
 
-#define WAIT "WAIT"
-#define CHENIL "CHENIL."
-#define ARRET "ARRET"
+
+#define WAIT "WAIT    "
+#define CHENIL "CHENIL. "
+#define STOP "ARRET   "
 
 u8 counter = 0;
 
@@ -29,8 +31,7 @@ u8 lireBP2(void)
 void initPort(void)
 {
     init_Ports();
-    GPIOE ->DDR =0x00 ;
-    GPIOE ->CR1 = BP2MASK;
+    
 }
 
 void intertiming(void)
@@ -60,5 +61,69 @@ void incrementCounter(void)
     TIM3 -> SR1 =TIM3 -> SR1& ~(TIM3_SR1_UIF);
     (counter) ++;
     (counter)%=10;
-    afficher_TIL321(counter);
+}
+
+void allumLed(u8 value)
+{
+    if(value == 0)
+    {
+        GPIOB-> ODR = 0;
+    }else
+    {
+        GPIOB-> ODR = 1<< value-1;
+    }
+    
+    
+}
+
+void chenillardLed(void)
+{
+    char chenOn;
+    char flag;
+
+    initPort();
+    initTimer();
+    enableInterrupts();
+    
+    flag = 0;
+    chenOn = 0;
+
+    afficher_Modules_HDLX(WAIT);
+
+    while (1)
+    {
+        
+        if(!chenOn && getButtonStart())
+        {
+            afficher_Modules_HDLX(CHENIL);
+            TIM3 ->CR1 |= TIMER3CR1;
+            counter = 0;
+            chenOn =1;
+        } 
+
+        if(chenOn && getButtonStop()){
+            
+            afficher_Modules_HDLX(STOP);
+            TIM3 ->CR1 &= ~TIMER3CR1;
+            counter = 0;
+            chenOn = 0;
+            allumLed(counter);
+        }
+
+        if(chenOn)
+        {
+            allumLed(counter);
+        }
+    }
+}
+
+u8 getButtonStart(void)
+{
+    return !(GPIOC->IDR & BP3MASK);
+
+}
+
+u8 getButtonStop(void)
+{
+    return lireBP2() ;
 }
