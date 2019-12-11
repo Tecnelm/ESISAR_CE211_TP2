@@ -6,3 +6,7 @@ Keyword=ST7Workspace-V0.7
 [Project0]
 Filename=..\esisar_ce211_tp2/exo1\exo1.stp
 Dependencies=
+[Options]
+ActiveProject=exo1
+ActiveConfig=Debug
+AddSortedElements=1

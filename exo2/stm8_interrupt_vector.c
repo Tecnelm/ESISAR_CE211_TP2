@@ -1,7 +1,7 @@
 /*	BASIC INTERRUPT VECTOR TABLE FOR STM8 devices
  *	Copyright (c) 2007 STMicroelectronics
  */
-#include "mes_fonctions.h"
+
 typedef void @far (*interrupt_handler_t)(void);
 
 struct interrupt_vector {
@@ -11,12 +11,9 @@ struct interrupt_vector {
 
 @far @interrupt void NonHandledInterrupt (void)
 {
-	
-	return;
-}
-@far @interrupt void myHandlerTIM3 (void)
-{
-	incrementCounter();
+	/* in order to detect unexpected events during development, 
+	   it is recommended to set a breakpoint on the following instruction
+	*/
 	return;
 }
 
@@ -40,7 +37,7 @@ struct interrupt_vector const _vectab[] = {
 	{0x82, NonHandledInterrupt}, /* irq12 */
 	{0x82, NonHandledInterrupt}, /* irq13 */
 	{0x82, NonHandledInterrupt}, /* irq14 */
-	{0x82, myHandlerTIM3}, /* irq15 */
+	{0x82, NonHandledInterrupt}, /* irq15 */
 	{0x82, NonHandledInterrupt}, /* irq16 */
 	{0x82, NonHandledInterrupt}, /* irq17 */
 	{0x82, NonHandledInterrupt}, /* irq18 */
