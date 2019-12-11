@@ -5,107 +5,136 @@
   45                     ; 13 {
   46                     	switch	.text
   47  0000               f_NonHandledInterrupt:
-  51                     ; 17 	return;
+  51                     ; 15 	return;
   54  0000 80            	iret
-  56                     .const:	section	.text
-  57  0000               __vectab:
-  58  0000 82            	dc.b	130
-  60  0001 00            	dc.b	page(__stext)
-  61  0002 0000          	dc.w	__stext
-  62  0004 82            	dc.b	130
-  64  0005 00            	dc.b	page(f_NonHandledInterrupt)
-  65  0006 0000          	dc.w	f_NonHandledInterrupt
-  66  0008 82            	dc.b	130
-  68  0009 00            	dc.b	page(f_NonHandledInterrupt)
-  69  000a 0000          	dc.w	f_NonHandledInterrupt
-  70  000c 82            	dc.b	130
-  72  000d 00            	dc.b	page(f_NonHandledInterrupt)
-  73  000e 0000          	dc.w	f_NonHandledInterrupt
-  74  0010 82            	dc.b	130
-  76  0011 00            	dc.b	page(f_NonHandledInterrupt)
-  77  0012 0000          	dc.w	f_NonHandledInterrupt
-  78  0014 82            	dc.b	130
-  80  0015 00            	dc.b	page(f_NonHandledInterrupt)
-  81  0016 0000          	dc.w	f_NonHandledInterrupt
-  82  0018 82            	dc.b	130
-  84  0019 00            	dc.b	page(f_NonHandledInterrupt)
-  85  001a 0000          	dc.w	f_NonHandledInterrupt
-  86  001c 82            	dc.b	130
-  88  001d 00            	dc.b	page(f_NonHandledInterrupt)
-  89  001e 0000          	dc.w	f_NonHandledInterrupt
-  90  0020 82            	dc.b	130
-  92  0021 00            	dc.b	page(f_NonHandledInterrupt)
-  93  0022 0000          	dc.w	f_NonHandledInterrupt
-  94  0024 82            	dc.b	130
-  96  0025 00            	dc.b	page(f_NonHandledInterrupt)
-  97  0026 0000          	dc.w	f_NonHandledInterrupt
-  98  0028 82            	dc.b	130
- 100  0029 00            	dc.b	page(f_NonHandledInterrupt)
- 101  002a 0000          	dc.w	f_NonHandledInterrupt
- 102  002c 82            	dc.b	130
- 104  002d 00            	dc.b	page(f_NonHandledInterrupt)
- 105  002e 0000          	dc.w	f_NonHandledInterrupt
- 106  0030 82            	dc.b	130
- 108  0031 00            	dc.b	page(f_NonHandledInterrupt)
- 109  0032 0000          	dc.w	f_NonHandledInterrupt
- 110  0034 82            	dc.b	130
- 112  0035 00            	dc.b	page(f_NonHandledInterrupt)
- 113  0036 0000          	dc.w	f_NonHandledInterrupt
- 114  0038 82            	dc.b	130
- 116  0039 00            	dc.b	page(f_NonHandledInterrupt)
- 117  003a 0000          	dc.w	f_NonHandledInterrupt
- 118  003c 82            	dc.b	130
- 120  003d 00            	dc.b	page(f_NonHandledInterrupt)
- 121  003e 0000          	dc.w	f_NonHandledInterrupt
- 122  0040 82            	dc.b	130
- 124  0041 00            	dc.b	page(f_NonHandledInterrupt)
- 125  0042 0000          	dc.w	f_NonHandledInterrupt
- 126  0044 82            	dc.b	130
- 128  0045 00            	dc.b	page(f_NonHandledInterrupt)
- 129  0046 0000          	dc.w	f_NonHandledInterrupt
- 130  0048 82            	dc.b	130
- 132  0049 00            	dc.b	page(f_NonHandledInterrupt)
- 133  004a 0000          	dc.w	f_NonHandledInterrupt
- 134  004c 82            	dc.b	130
- 136  004d 00            	dc.b	page(f_NonHandledInterrupt)
- 137  004e 0000          	dc.w	f_NonHandledInterrupt
- 138  0050 82            	dc.b	130
- 140  0051 00            	dc.b	page(f_NonHandledInterrupt)
- 141  0052 0000          	dc.w	f_NonHandledInterrupt
- 142  0054 82            	dc.b	130
- 144  0055 00            	dc.b	page(f_NonHandledInterrupt)
- 145  0056 0000          	dc.w	f_NonHandledInterrupt
- 146  0058 82            	dc.b	130
- 148  0059 00            	dc.b	page(f_NonHandledInterrupt)
- 149  005a 0000          	dc.w	f_NonHandledInterrupt
- 150  005c 82            	dc.b	130
- 152  005d 00            	dc.b	page(f_NonHandledInterrupt)
- 153  005e 0000          	dc.w	f_NonHandledInterrupt
- 154  0060 82            	dc.b	130
- 156  0061 00            	dc.b	page(f_NonHandledInterrupt)
- 157  0062 0000          	dc.w	f_NonHandledInterrupt
- 158  0064 82            	dc.b	130
- 160  0065 00            	dc.b	page(f_NonHandledInterrupt)
- 161  0066 0000          	dc.w	f_NonHandledInterrupt
- 162  0068 82            	dc.b	130
- 164  0069 00            	dc.b	page(f_NonHandledInterrupt)
- 165  006a 0000          	dc.w	f_NonHandledInterrupt
- 166  006c 82            	dc.b	130
- 168  006d 00            	dc.b	page(f_NonHandledInterrupt)
- 169  006e 0000          	dc.w	f_NonHandledInterrupt
- 170  0070 82            	dc.b	130
- 172  0071 00            	dc.b	page(f_NonHandledInterrupt)
- 173  0072 0000          	dc.w	f_NonHandledInterrupt
- 174  0074 82            	dc.b	130
- 176  0075 00            	dc.b	page(f_NonHandledInterrupt)
- 177  0076 0000          	dc.w	f_NonHandledInterrupt
- 178  0078 82            	dc.b	130
- 180  0079 00            	dc.b	page(f_NonHandledInterrupt)
- 181  007a 0000          	dc.w	f_NonHandledInterrupt
- 182  007c 82            	dc.b	130
- 184  007d 00            	dc.b	page(f_NonHandledInterrupt)
- 185  007e 0000          	dc.w	f_NonHandledInterrupt
- 236                     	xdef	__vectab
- 237                     	xref	__stext
- 238                     	xdef	f_NonHandledInterrupt
- 257                     	end
+  77                     ; 17 @far @interrupt void myHandlerTIM3 (void)
+  77                     ; 18 {
+  78                     	switch	.text
+  79  0001               f_myHandlerTIM3:
+  81  0001 8a            	push	cc
+  82  0002 84            	pop	a
+  83  0003 a4bf          	and	a,#191
+  84  0005 88            	push	a
+  85  0006 86            	pop	cc
+  86  0007 3b0002        	push	c_x+2
+  87  000a be00          	ldw	x,c_x
+  88  000c 89            	pushw	x
+  89  000d 3b0002        	push	c_y+2
+  90  0010 be00          	ldw	x,c_y
+  91  0012 89            	pushw	x
+  94                     ; 19 	incrementCounter();
+  96  0013 cd0000        	call	_incrementCounter
+  98                     ; 20 	return;
+ 101  0016 85            	popw	x
+ 102  0017 bf00          	ldw	c_y,x
+ 103  0019 320002        	pop	c_y+2
+ 104  001c 85            	popw	x
+ 105  001d bf00          	ldw	c_x,x
+ 106  001f 320002        	pop	c_x+2
+ 107  0022 80            	iret
+ 109                     .const:	section	.text
+ 110  0000               __vectab:
+ 111  0000 82            	dc.b	130
+ 113  0001 00            	dc.b	page(__stext)
+ 114  0002 0000          	dc.w	__stext
+ 115  0004 82            	dc.b	130
+ 117  0005 00            	dc.b	page(f_NonHandledInterrupt)
+ 118  0006 0000          	dc.w	f_NonHandledInterrupt
+ 119  0008 82            	dc.b	130
+ 121  0009 00            	dc.b	page(f_NonHandledInterrupt)
+ 122  000a 0000          	dc.w	f_NonHandledInterrupt
+ 123  000c 82            	dc.b	130
+ 125  000d 00            	dc.b	page(f_NonHandledInterrupt)
+ 126  000e 0000          	dc.w	f_NonHandledInterrupt
+ 127  0010 82            	dc.b	130
+ 129  0011 00            	dc.b	page(f_NonHandledInterrupt)
+ 130  0012 0000          	dc.w	f_NonHandledInterrupt
+ 131  0014 82            	dc.b	130
+ 133  0015 00            	dc.b	page(f_NonHandledInterrupt)
+ 134  0016 0000          	dc.w	f_NonHandledInterrupt
+ 135  0018 82            	dc.b	130
+ 137  0019 00            	dc.b	page(f_NonHandledInterrupt)
+ 138  001a 0000          	dc.w	f_NonHandledInterrupt
+ 139  001c 82            	dc.b	130
+ 141  001d 00            	dc.b	page(f_NonHandledInterrupt)
+ 142  001e 0000          	dc.w	f_NonHandledInterrupt
+ 143  0020 82            	dc.b	130
+ 145  0021 00            	dc.b	page(f_NonHandledInterrupt)
+ 146  0022 0000          	dc.w	f_NonHandledInterrupt
+ 147  0024 82            	dc.b	130
+ 149  0025 00            	dc.b	page(f_NonHandledInterrupt)
+ 150  0026 0000          	dc.w	f_NonHandledInterrupt
+ 151  0028 82            	dc.b	130
+ 153  0029 00            	dc.b	page(f_NonHandledInterrupt)
+ 154  002a 0000          	dc.w	f_NonHandledInterrupt
+ 155  002c 82            	dc.b	130
+ 157  002d 00            	dc.b	page(f_NonHandledInterrupt)
+ 158  002e 0000          	dc.w	f_NonHandledInterrupt
+ 159  0030 82            	dc.b	130
+ 161  0031 00            	dc.b	page(f_NonHandledInterrupt)
+ 162  0032 0000          	dc.w	f_NonHandledInterrupt
+ 163  0034 82            	dc.b	130
+ 165  0035 00            	dc.b	page(f_NonHandledInterrupt)
+ 166  0036 0000          	dc.w	f_NonHandledInterrupt
+ 167  0038 82            	dc.b	130
+ 169  0039 00            	dc.b	page(f_NonHandledInterrupt)
+ 170  003a 0000          	dc.w	f_NonHandledInterrupt
+ 171  003c 82            	dc.b	130
+ 173  003d 00            	dc.b	page(f_NonHandledInterrupt)
+ 174  003e 0000          	dc.w	f_NonHandledInterrupt
+ 175  0040 82            	dc.b	130
+ 177  0041 00            	dc.b	page(f_NonHandledInterrupt)
+ 178  0042 0000          	dc.w	f_NonHandledInterrupt
+ 179  0044 82            	dc.b	130
+ 181  0045 01            	dc.b	page(f_myHandlerTIM3)
+ 182  0046 0001          	dc.w	f_myHandlerTIM3
+ 183  0048 82            	dc.b	130
+ 185  0049 00            	dc.b	page(f_NonHandledInterrupt)
+ 186  004a 0000          	dc.w	f_NonHandledInterrupt
+ 187  004c 82            	dc.b	130
+ 189  004d 00            	dc.b	page(f_NonHandledInterrupt)
+ 190  004e 0000          	dc.w	f_NonHandledInterrupt
+ 191  0050 82            	dc.b	130
+ 193  0051 00            	dc.b	page(f_NonHandledInterrupt)
+ 194  0052 0000          	dc.w	f_NonHandledInterrupt
+ 195  0054 82            	dc.b	130
+ 197  0055 00            	dc.b	page(f_NonHandledInterrupt)
+ 198  0056 0000          	dc.w	f_NonHandledInterrupt
+ 199  0058 82            	dc.b	130
+ 201  0059 00            	dc.b	page(f_NonHandledInterrupt)
+ 202  005a 0000          	dc.w	f_NonHandledInterrupt
+ 203  005c 82            	dc.b	130
+ 205  005d 00            	dc.b	page(f_NonHandledInterrupt)
+ 206  005e 0000          	dc.w	f_NonHandledInterrupt
+ 207  0060 82            	dc.b	130
+ 209  0061 00            	dc.b	page(f_NonHandledInterrupt)
+ 210  0062 0000          	dc.w	f_NonHandledInterrupt
+ 211  0064 82            	dc.b	130
+ 213  0065 00            	dc.b	page(f_NonHandledInterrupt)
+ 214  0066 0000          	dc.w	f_NonHandledInterrupt
+ 215  0068 82            	dc.b	130
+ 217  0069 00            	dc.b	page(f_NonHandledInterrupt)
+ 218  006a 0000          	dc.w	f_NonHandledInterrupt
+ 219  006c 82            	dc.b	130
+ 221  006d 00            	dc.b	page(f_NonHandledInterrupt)
+ 222  006e 0000          	dc.w	f_NonHandledInterrupt
+ 223  0070 82            	dc.b	130
+ 225  0071 00            	dc.b	page(f_NonHandledInterrupt)
+ 226  0072 0000          	dc.w	f_NonHandledInterrupt
+ 227  0074 82            	dc.b	130
+ 229  0075 00            	dc.b	page(f_NonHandledInterrupt)
+ 230  0076 0000          	dc.w	f_NonHandledInterrupt
+ 231  0078 82            	dc.b	130
+ 233  0079 00            	dc.b	page(f_NonHandledInterrupt)
+ 234  007a 0000          	dc.w	f_NonHandledInterrupt
+ 235  007c 82            	dc.b	130
+ 237  007d 00            	dc.b	page(f_NonHandledInterrupt)
+ 238  007e 0000          	dc.w	f_NonHandledInterrupt
+ 289                     	xdef	__vectab
+ 290                     	xref	__stext
+ 291                     	xdef	f_myHandlerTIM3
+ 292                     	xdef	f_NonHandledInterrupt
+ 293                     	xref	_incrementCounter
+ 294                     	xref.b	c_x
+ 295                     	xref.b	c_y
+ 314                     	end
