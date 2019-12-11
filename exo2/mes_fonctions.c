@@ -60,7 +60,7 @@ void incrementCounter(void)
 {
     TIM3 -> SR1 =TIM3 -> SR1& ~(TIM3_SR1_UIF);
     (counter) ++;
-    (counter)%=10;
+    (counter)%=8;
 }
 
 void allumLed(u8 value)
